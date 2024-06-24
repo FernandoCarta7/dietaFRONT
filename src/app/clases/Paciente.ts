@@ -7,6 +7,7 @@ export class Paciente {
     genero: string;
     fecha_nacimiento: Date;
     peso: number;
+    altura:number;
     nivel_actividad: string;
     enfermedades?: string;
     correo: string;
