@@ -17,4 +17,13 @@ export class NavbarComponent {
   goToPaciente(){
     this.router.navigate(['paciente']);
   }
+  goToAlimentos(){
+    this.router.navigate(['alimento']);
+  }
+  goToReceta(){
+    this.router.navigate(['paciente']);
+  }
+  goToInicio(){
+    this.router.navigate(['inicio']);
+  }
 }

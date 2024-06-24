@@ -1,26 +1,6 @@
-.sidenav {
-    height: 100vh; /* Set height to 100% viewport height */
-    position: fixed; /* Fix the menu to the left side */
-    top: 0; /* Start from the top of the viewport */
-    left: 0; /* Position at the left edge */
-    width: 200px; /* Set desired width */
-    background-color: #f1f1f1; /* Set background color */
-    padding: 20px; /* Add some padding */
-}
-
-.sidenav a {
-    color: white; /* Set text color */
-    text-decoration: none; /* Remove underline decoration */
-    display: block; /* Make links fill the width of the menu item */
-    padding: 10px; /* Add padding for spacing */
-}
-
-.sidenav a.active {
-    background-color: #ccc; /* Highlight active menu item */
-}
-
-/* Rest of your page content styles can go here */
-.main-content {
-    margin-left: 200px; /* Push content to the right based on menu width */
-    padding: 20px;
+button {
+    display: inline;
+    color: white;
+    padding: 1rem;
+    margin: 0.3rem;
 }
