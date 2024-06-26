@@ -9,7 +9,7 @@ export class Paciente {
     peso: number;
     altura:number;
     nivel_actividad: string;
-    enfermedades?: string;
+    enfermedades: string;
     correo: string;
     celular: string;
   }

@@ -27,5 +27,12 @@ export class PacienteComponent {
     ))
   }
 
+
+  editarPaciente(id:number){
+    this.enrutador.navigate(['editar-paciente', id]);
+  }
+  irRegistrarPaciente(){
+    this.enrutador.navigate(['registrar-paciente'])
+  }
 }
 

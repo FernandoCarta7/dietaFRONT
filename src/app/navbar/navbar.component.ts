@@ -21,7 +21,7 @@ export class NavbarComponent {
     this.router.navigate(['alimento']);
   }
   goToReceta(){
-    this.router.navigate(['paciente']);
+    this.router.navigate(['receta']);
   }
   goToInicio(){
     this.router.navigate(['inicio']);

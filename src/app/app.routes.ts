@@ -6,6 +6,7 @@ import { RecetaComponent } from './receta/receta.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { title } from 'process';
 import { RegistrarPacienteComponent } from './registrar-paciente/registrar-paciente.component';
+import { EditarPacienteComponent } from './editar-paciente/editar-paciente.component';
 
 export const routes: Routes = [
     { path: 'paciente', component: PacienteComponent, title: 'Pacientes' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: 'receta', component: RecetaComponent, title: 'Recetas' },
     { path: 'inicio', component: InicioComponent, title: 'Inicio' },
     { path: 'registrar-paciente', component: RegistrarPacienteComponent, title: 'Registro Paciente' }, 
+    { path: 'editar-paciente/:id',component: EditarPacienteComponent, title: 'Editar paciente' },
     { path: '', redirectTo: 'inicio', pathMatch: 'full' }
 ];
