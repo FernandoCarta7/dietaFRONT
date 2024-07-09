@@ -1,35 +1,105 @@
 <div class="container">
     <br>
-    <div class="container text-center">
-        <h3>Pacientes</h3>
-    </div>
+    <!--LISTADO DE PACIENTES-->
 
+    <table class="table shadow-lg p-3 mb-5 rounded">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let paciente of pacientes">
+                <th scope="row">{{ paciente.primer_nombre + " " + paciente.primer_apellido }}</th>
+                <td>{{paciente.genero}}</td>
+                <td>{{paciente.altura + " cm"}}</td>
+                <td>{{paciente.fecha_nacimiento}}</td>
+                <td>{{paciente.peso + " kg"}}</td>
+                <td>
+                    <button class="btn btn-primary" style="margin: 0.3rem;"
+                        (click)="editarPaciente(paciente.id_paciente)"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-success" style="margin: 0.3rem;"><i class="bi bi-info-square"></i></button>
+                    <button class="btn btn-danger" style="margin: 0.3rem;"><i class="bi bi-trash"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-primary" style="margin: 0.3rem;" (click)="irRegistrarPaciente()"><i class="bi bi-plus-lg"></i> Registrar paciente</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br>
+    <!--BUSCAR PACIENTES-->
+    <!--
+        <div class="text-center">
+            <div class="col">
+            <div class="card">
+                
+                <div class="card-body">
+                    <h3 class="card-title">
+                        Buscar paciente
+                    </h3>
+                    
+                    <form class="d-grid" role="search">
+                        <br>
+                        <input class="form-control me-2" type="search" placeholder="Primer nombre"
+                        aria-label="Primer nombre">
+                        <br>
+                        <input class="form-control me-2" type="search" placeholder="Primer apellido"
+                        aria-label="Primer nombre">
+                        <br>
+                        <input class="form-control me-2" type="search" placeholder="Correo electronico"
+                        aria-label="Correo electronico">
+                        <br>
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <br>
+
+
+    <!--    
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let paciente of pacientes">
-            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+
+        <div class="col-sm-6" *ngFor="let paciente of pacientes">
+            <div class="card shadow p-3 mb-3 mb-sm-0 bg-body-tertiary rounded">
                 <div class="card-body">
                     <h3 class="card-title">{{ paciente.primer_nombre + " " + paciente.primer_apellido }}</h3>
                     <p class="card-text">
                         Genero: <span>{{paciente.genero}}</span>
                     </p>
                     <p class="card-text">
-                        Altura: <span>  {{paciente.altura}} cm </span>
+                        Altura: <span> {{paciente.altura}} cm </span>
                     </p>
                     <p class="card-text">
-                        Fecha nacimiento: <span>  {{paciente.fecha_nacimiento}} </span>
+                        Fecha nacimiento: <span> {{paciente.fecha_nacimiento}} </span>
                     </p>
                     <p class="card-text">
-                        Peso: <span>  {{paciente.peso}} kg </span>
+                        Peso: <span> {{paciente.peso}} kg </span>
                     </p>
 
-                    <div class="d-flex ">
-                            <button class="btn btn-primary container" (click)="editarPaciente(paciente.id_paciente)"><i class="bi bi-pencil"></i> Editar</button>
-                            <button class="btn btn-success container"><i class="bi bi-info-square"></i> Ver</button>
-                            <button class="btn btn-danger container"><i class="bi bi-trash"></i> Borrar</button>
+                    <div class="container">
+
+                        
+
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button class="btn btn-primary" (click)="irRegistrarPaciente()">Agregar paciente</button>
+    -->
+
+
 </div>

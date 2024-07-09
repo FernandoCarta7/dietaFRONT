@@ -3,11 +3,12 @@ import { Paciente } from '../clases/Paciente';
 import { PacienteService } from '../clases/PacienteServicio.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RegistrarPacienteComponent } from '../registrar-paciente/registrar-paciente.component';
 
 @Component({
   selector: 'paciente',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RegistrarPacienteComponent],
   templateUrl: './paciente.component.html',
   styleUrl: './paciente.component.css'
 })

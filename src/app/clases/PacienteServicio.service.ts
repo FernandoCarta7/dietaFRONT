@@ -9,6 +9,7 @@ import { Paciente } from "./Paciente";
 export class PacienteService{
     private urlBase = "http://localhost:8080/dieta-app/pacientes";
     private urlBaseEditar = "http://localhost:8080/dieta-app/paciente";
+    private urlRegistrar = "http://localhost:8080/dieta-app/pacientes/registrar";
     constructor(private http : HttpClient){}
 
     obtenerPacientes(): Observable<Paciente[]>{
@@ -19,7 +20,7 @@ export class PacienteService{
         return this.http.put(`${this.urlBase}/${id}`,paciente);
     }
     agregarPaciente(paciente:Paciente):Observable<Object>  {
-        return this.http.post(this.urlBase, paciente);
+        return this.    http.post(this.urlRegistrar, paciente);
     }
 
     obtenerPacientePorId(id:number){

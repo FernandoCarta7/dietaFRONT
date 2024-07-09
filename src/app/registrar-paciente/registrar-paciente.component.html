@@ -1,6 +1,6 @@
 <div class="container ">
     <br>
-    <form class="form-floating shadow-lg p-3 mb-5 bg-light rounded">
+    <form class="form-floating shadow-lg p-3 mb-5 bg-light rounded" (ngSubmit)="guardarPacienteClick()">
         <h2>Registro de paciente</h2>
         <br>
         <div class="container">
@@ -10,15 +10,16 @@
 
                         <label class="input-group-text" for="primer_nombre"><i class="bi bi-person-vcard"></i></label>
                         <input type="text" class="form-control" placeholder="Primer nombre" aria-label="Primer nombre"
-                            id="primer_nombre">
+                            id="primer_nombre" name="primer_nombre" [(ngModel)]="paciente.primer_nombre" required>
                     </div>
+                    <span *ngIf="paciente.primer_nombre === null">Este campo es requerido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
 
                         <label class="input-group-text" for="segundo_nombre"><i class="bi bi-person-vcard"></i></label>
                         <input type="text" class="form-control" placeholder="Segundo nombre" aria-label="Segundo nombre"
-                            id="segundo_nombre">
+                            id="segundo_nombre" name="segundo_nombre" [(ngModel)]="paciente.segundo_nombre">
                     </div>
                 </div>
             </div>
@@ -27,17 +28,21 @@
 
                 <div class="col">
                     <div class="input-group">
-                        <label class="input-group-text" for="primer_apellido"><i class="bi bi-file-person"></i></label>
+                        <label class="input-group-text " for="primer_apellido"><i class="bi bi-file-person"></i></label>
                         <input type="text" class="form-control" placeholder="Primer apellido"
-                            aria-label="Primer apellido" id="primer_apellido">
+                            aria-label="Primer apellido" id="primer_apellido" name="primer_apellido"
+                            [(ngModel)]="paciente.primer_apellido" required>
+
                     </div>
+                    <span *ngIf="paciente.primer_apellido === null">Este campo es requerido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
 
                         <label class="input-group-text" for="segundo_apellido"><i class="bi bi-file-person"></i></label>
                         <input type="text" class="form-control" placeholder="Segundo apellido"
-                            aria-label="Segundo apellido" id="segundo_apellido">
+                            aria-label="Segundo apellido" id="segundo_apellido" name="segundo_apellido"
+                            [(ngModel)]="paciente.segundo_apellido">
                     </div>
                 </div>
             </div>
@@ -47,13 +52,16 @@
                     <div class="input-group">
 
                         <label class="input-group-text" for="genero"><i class="bi bi-gender-ambiguous"></i></label>
-                        <select class="form-select" id="4" aria-label="Example select with button addon" id="genero">
+                        <select class="form-select" id="4" aria-label="Example select with button addon" id="genero"
+                            required name="genero" [(ngModel)]="paciente.genero">
                             <option selected>Seleccione género...</option>
-                            <option value="1">Masculino</option>
-                            <option value="2">Femenino</option>
+                            <option value="MASCULINO">Masculino</option>
+                            <option value="FEMENINO">Femenino</option>
                             <!--<option value="3">Three</option>-->
                         </select>
                     </div>
+                    <span *ngIf="paciente.genero === null  || paciente.genero.includes('Seleccione género...')">Este
+                        campo es requerido</span>
 
                 </div>
                 <div class="col">
@@ -62,8 +70,11 @@
 
                         <label class="input-group-text" for="nacimiento"><i class="bi bi-calendar-date"></i></label>
                         <input type="date" class="form-control" placeholder="Fecha de nacimiento"
-                            aria-label="Fecha de nacimiento" id="nacimiento">
+                            aria-label="Fecha de nacimiento" id="nacimiento" name="fecha_nacimiento"
+                            [(ngModel)]="paciente.fecha_nacimiento" required>
                     </div>
+                    <span *ngIf="paciente.fecha_nacimiento === null || paciente.fecha_nacimiento === undefined">Este
+                        campo es requerido</span>
                 </div>
             </div>
             <br>
@@ -72,14 +83,17 @@
                     <div class="input-group">
 
                         <label class="input-group-text" for="correo"><i class="bi bi-envelope-at"></i></label>
-                        <input type="email" class="form-control" placeholder="Correo" aria-label="Correo" id="correo">
+                        <input type="email" class="form-control" placeholder="Correo" aria-label="Correo" id="correo"
+                            name="correo" [(ngModel)]="paciente.correo" required>
+                        <span *ngIf="paciente.correo ==='' ">Este campo es requerido</span>
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group">
 
                         <label class="input-group-text" for="celular"><i class="bi bi-telephone-plus"></i></label>
-                        <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" id="celular">
+                        <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" id="celular"
+                            name="celular" [(ngModel)]="paciente.celular">
                     </div>
                 </div>
 
@@ -90,17 +104,21 @@
                     <div class="input-group">
 
                         <label class="input-group-text" for="peso"><i class="bi bi-speedometer2"></i></label>
-                        <input type="number" class="form-control" placeholder="Peso" aria-label="Peso" id="peso">
+                        <input type="number" class="form-control" placeholder="Peso" aria-label="Peso" id="peso"
+                            name="peso" [(ngModel)]="paciente.peso" required>
                         <label class="input-group-text" for="peso">Kg</label>
                     </div>
+                    <span *ngIf="(paciente.peso <= 0) || paciente.peso === null ">Este campo es requerido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
 
                         <label class="input-group-text" for="altura"><i class="bi bi-speedometer2"></i></label>
-                        <input type="number" class="form-control" placeholder="Altura" aria-label="Altura" id="altura">
+                        <input type="number" class="form-control" placeholder="Altura" aria-label="Altura" id="altura"
+                            name="altura" [(ngModel)]="paciente.altura" required>
                         <label class="input-group-text" for="altura">cm</label>
                     </div>
+                    <span *ngIf="paciente.altura === null">Este campo es requerido</span>
                 </div>
 
 
@@ -113,7 +131,7 @@
                         <label class="input-group-text" for="actividad_fisica"><i
                                 class="bi bi-person-walking"></i></label>
                         <select class="form-select" id="4" aria-label="Example select with button addon"
-                            id="actividad_fisica">
+                            id="actividad_fisica" name="actividad_fisica" [(ngModel)]="paciente.nivel_actividad">
                             <option selected>Actividad física...</option>
                             <option value="alto">Alta</option>
                             <option value="moderado">Moderada</option>
@@ -132,7 +150,7 @@
 
                         <label class="input-group-text" for="enfermedades"><i class="bi bi-hospital"></i></label>
                         <textarea type="text" class="form-control" placeholder="Enfermedades" aria-label="Enfermedades"
-                            id="enfermedades"></textarea>
+                            id="enfermedades" name="enfermedades" [(ngModel)]="paciente.enfermedades"></textarea>
                     </div>
                 </div>
 
@@ -141,12 +159,11 @@
 
             <div class="row">
                 <div class="col">
-                    <button name="" id="" class="btn btn-primary" type="button"><i class="bi bi-floppy"></i>
-                        Guardar</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-floppy"></i>Guardar</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-danger" (click)="irPaciente()" type="button"><i class="bi bi-caret-left-fill"></i>
-                        Regresar</button>
+                    <button class="btn btn-danger" type="reset"><i class="bi bi-exclamation-circle"></i>
+                        Limpiar formulario</button>
                 </div>
 
             </div>

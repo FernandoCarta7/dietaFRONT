@@ -36,7 +36,7 @@ export class EditarPacienteComponent {
 
     this.paciente.correo = this.paciente.correo.toUpperCase();
     this.paciente.enfermedades = this.paciente.enfermedades.toUpperCase();
-    this.paciente.genero = this.paciente.enfermedades.toUpperCase();
+    this.paciente.genero = this.paciente.genero.toUpperCase();
     this.paciente.nivel_actividad = this.paciente.nivel_actividad.toUpperCase();
     this.paciente.primer_apellido = this.paciente.primer_apellido.toUpperCase();
     this.paciente.primer_nombre = this.paciente.primer_nombre.toUpperCase();
