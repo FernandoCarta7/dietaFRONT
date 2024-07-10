@@ -26,4 +26,9 @@ export class PacienteService{
     obtenerPacientePorId(id:number){
         return this.http.get<Paciente>(`${this.urlBaseEditar}/${id}`);
     }
+
+    eliminarPaciente( id : number ) : Observable<Object>{
+        return this.http.delete(`${this.urlBase}/${id}`);
+    }
+
 }

@@ -13,14 +13,14 @@ import { RegistrarPacienteComponent } from '../registrar-paciente/registrar-paci
   styleUrl: './paciente.component.css'
 })
 export class PacienteComponent {
-  pacientes:Paciente[];
+  pacientes: Paciente[];
 
-  constructor(private pacienteServicio: PacienteService, private enrutador:Router){}
+  constructor(private pacienteServicio: PacienteService, private enrutador: Router) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.obtenerPacientes();
   }
-  obtenerPacientes(){
+  obtenerPacientes() {
     this.pacienteServicio.obtenerPacientes().subscribe((
       datos => {
         this.pacientes = datos;
@@ -29,11 +29,18 @@ export class PacienteComponent {
   }
 
 
-  editarPaciente(id:number){
+  editarPaciente(id: number) {
     this.enrutador.navigate(['editar-paciente', id]);
   }
-  irRegistrarPaciente(){
+  irRegistrarPaciente() {
     this.enrutador.navigate(['registrar-paciente'])
+  }
+
+  eliminarPaciente(id: number) {
+    this.pacienteServicio.eliminarPaciente(id).subscribe({
+      next: (datos) => this.obtenerPacientes(),
+      error: (error) => console.error(error)
+    })
   }
 }
 

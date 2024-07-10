@@ -23,8 +23,7 @@
                 <td>
                     <button class="btn btn-primary" style="margin: 0.3rem;"
                         (click)="editarPaciente(paciente.id_paciente)"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-success" style="margin: 0.3rem;"><i class="bi bi-info-square"></i></button>
-                    <button class="btn btn-danger" style="margin: 0.3rem;"><i class="bi bi-trash"></i></button>
+                    <button class="btn btn-danger" (click)="eliminarPaciente(paciente.id_paciente)" style="margin: 0.3rem;"><i class="bi bi-trash"></i></button>
                 </td>
             </tr>
             <tr>
