@@ -44,7 +44,7 @@ export class RegistrarPacienteComponent {
     this.pacienteServicio.agregarPaciente(this.paciente).subscribe(
       {
         next: (datos) => {
-          this.enrutador.navigate(['inicio']);
+          this.enrutador.navigate(['/paciente']);
         },
         error: (error: any) => { console.log('Error al guardar el paciente') }
       }

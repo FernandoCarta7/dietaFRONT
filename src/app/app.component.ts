@@ -5,16 +5,16 @@ import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, 
-    NavbarComponent, 
-    RouterOutlet, 
+  imports: [RouterOutlet,
+    NavbarComponent,
+    RouterOutlet,
     CommonModule,
-    FormsModule
-  ],
+    FormsModule, FooterComponent],
   providers:[HttpClient],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
