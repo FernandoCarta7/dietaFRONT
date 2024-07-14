@@ -1,10 +1,12 @@
 
 footer {
-
+    margin-top: 1rem;
     position: fixed;
     width: 100%;    
     bottom: 0;
 }
-a, button{
+cite, h6{
+    display: block;
     color: white;
+    margin: 1rem;
 }

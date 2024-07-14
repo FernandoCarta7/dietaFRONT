@@ -1,0 +1,36 @@
+<div class="container ">
+    <br>
+    <form class="form-floating p-3 mb-5 bg-primary rounded">
+        <h2>Carga de alimentos mediante archivo CSV</h2>
+        <br>
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group">
+
+                        <label class="input-group-text" for="alimentos"><i class="bi bi-hospital"></i></label>
+                        <input type="file" (change)="onFileSelected($event)" class="form-control" placeholder="Alimentos" aria-label="alimentos"
+                            id="alimentos" name="alimentos" />
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-success" (click)="onUpload()"><i class="bi bi-floppy"></i>Cargar archivo</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-danger" type="reset"><i class="bi bi-exclamation-circle"></i>
+                        Limpiar formulario</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

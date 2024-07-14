@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PacienteService } from '../clases/PacienteServicio.service';
-import { Paciente } from '../clases/Paciente';
+import { PacienteService } from '../servicios/PacienteServicio.service';
+import { Paciente } from '../servicios/Paciente';
 import { error } from 'console';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';

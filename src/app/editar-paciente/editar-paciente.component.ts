@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Paciente } from '../clases/Paciente';
-import { PacienteService } from '../clases/PacienteServicio.service';
+import { Paciente } from '../servicios/Paciente';
+import { PacienteService } from '../servicios/PacienteServicio.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormsModule } from '@angular/forms';

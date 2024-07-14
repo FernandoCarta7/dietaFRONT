@@ -1,3 +1,6 @@
-p {
-    color:black;
+.margen2{
+    margin: 2rem;
+}
+.fondoBoton{
+    background: #FF7D29;
 }

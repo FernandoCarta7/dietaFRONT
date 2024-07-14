@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { routes } from '../app.routes';
+import { Alimento } from '../servicios/Alimento';
+import { AlimentoServicio } from '../servicios/AlimentoServicio.service';
 
 @Component({
   selector: 'alimento',
@@ -14,26 +16,21 @@ import { routes } from '../app.routes';
   styleUrl: './alimento.component.css'
 })
 export class AlimentoComponent {
-  selectedFile : File | null = null;
+  alimentos : Alimento[];
+  
+  constructor(private alimentoServicio : AlimentoServicio, private router : Router){}
 
-  constructor(private http : HttpClient, private route : Router){}
-
-  onFileSelected ( event : any ) : void {
-    this.selectedFile = event.target.files[0];
+  ngOnInit(){
+    this.obtenerAlimentos();
   }
-  onUpload(): void {
-    if (this.selectedFile) {
-      const formData = new FormData();
-      formData.append('file', this.selectedFile);
 
-      this.http.post('http://localhost:8080/dieta-app/alimentos/upload', formData).subscribe(response => {
-        console.log('Upload success', response);
-        this.route.navigate(['/inicio']);
-
-      }, error => {
-        console.log('Upload error', error);
-      });
-    }
+  obtenerAlimentos(){
+    this.alimentoServicio.obtenerAlimentos().subscribe(
+      datos=>{
+        this.alimentos = datos;
+        console.log('ALIMENTOS OBTENIDOS');
+      }
+    )
   }
 
 }

@@ -11,5 +11,5 @@ export class Paciente {
     nivel_actividad: string;
     enfermedades: string;
     correo: string;
-    celular: string;
+    celular: string;  
   }

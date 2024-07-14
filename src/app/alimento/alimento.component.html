@@ -1,36 +1,22 @@
-<div class="container ">
-    <br>
-    <form class="form-floating p-3 mb-5 bg-primary rounded">
-        <h2>Carga de alimentos mediante archivo CSV</h2>
-        <br>
-        <div class="container">
-
-
-            <div class="row">
-                <div class="col">
-                    <div class="input-group">
-
-                        <label class="input-group-text" for="alimentos"><i class="bi bi-hospital"></i></label>
-                        <input type="file" (change)="onFileSelected($event)" class="form-control" placeholder="Alimentos" aria-label="alimentos"
-                            id="alimentos" name="alimentos" />
-                    </div>
-                </div>
-
-            </div>
-            <br>
-
-            <br>
-
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-success" (click)="onUpload()"><i class="bi bi-floppy"></i>Cargar archivo</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-danger" type="reset"><i class="bi bi-exclamation-circle"></i>
-                        Limpiar formulario</button>
-                </div>
-
-            </div>
-        </div>
-    </form>
+<br>
+<div class="table-responsive container">
+    <table class="table table-bordered bg-primary">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Calorias</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alimento of alimentos">
+                <td>{{alimento.nombre}}</td>
+                <td>{{alimento.categoria}}</td>
+                <td>{{alimento.descripcion}}</td>
+                <td>{{alimento.calorias}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+<br>
