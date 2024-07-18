@@ -4,3 +4,6 @@ h2 {
 table{
     margin-bottom: 4rem;
 }
+#sidebar{
+    height: 100%;
+}

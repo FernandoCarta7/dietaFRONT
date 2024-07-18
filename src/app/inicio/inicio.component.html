@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h5 class="card-title">RECETAS</h5>
                 <p class="card-text">Amplia variedad de recetas para sugerencia a pacientes</p>
-                <button class="btn btn-warning" ><i class="bi bi-card-text"></i> Ver recetas</button>
+                <button class="btn btn-warning"  (click)="goTo('receta')"><i class="bi bi-card-text"></i> Ver recetas</button>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
             <div class="card-body">
                 <h5 class="card-title">PACIENTES</h5>
                 <p class="card-text">Listado de pacientes registrados.</p>
-                <button class="btn btn-primary"><i class="bi bi-list-columns-reverse"></i> Listado</button>
+                <button class="btn btn-primary"(click)="goTo('paciente')"><i class="bi bi-list-columns-reverse"></i> Listado</button>
             </div>
         </div>
     </div>
@@ -29,7 +29,8 @@
             <div class="card-body">
                 <h5 class="card-title">ALIMENTOS</h5>
                 <p class="card-text">Listado amplio de alimentos</p>
-                <button class="btn fondoBoton" ><i class="bi bi-cake"></i> Alimentos</button>
+                <button class="btn fondoBoton"  (click)="goTo('alimento')"><i class="bi bi-cake"></i> Alimentos</button>
+                <button class="btn fondoVerdeExcel" (click)="goTo('registrar-alimento')"><i class="bi bi-filetype-csv"></i> Registro CSV</button>
             </div>
         </div>
     </div>
@@ -40,7 +41,7 @@
             <div class="card-body">
                 <h5 class="card-title">REGISTRAR PACIENTE</h5>
                 <p class="card-text">Registrar un paciente nuevo.</p>
-                <button class="btn btn-success"><i class="bi bi-clipboard2-data"></i> Registro</button>
+                <button class="btn btn-success" (click)="goTo('registrar-paciente')"><i class="bi bi-clipboard2-data"></i> Registro</button>
             </div>
         </div>
     </div>

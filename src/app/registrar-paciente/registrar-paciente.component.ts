@@ -30,7 +30,7 @@ export class RegistrarPacienteComponent {
     this.paciente.correo = null;
     this.paciente.enfermedades = "";
     this.paciente.fecha_nacimiento = null;
-    this.paciente.genero = null;
+    this.paciente.genero = "Seleccione género...";
     this.paciente.nivel_actividad = "";
     this.paciente.peso = null;
     this.paciente.primer_apellido = null;
@@ -40,15 +40,27 @@ export class RegistrarPacienteComponent {
   }
 
   guardarPaciente() {
+    if ((this.paciente.primer_apellido !== null) &&
+      (this.paciente.primer_nombre !== null) &&
+      (this.paciente.peso > 0 || this.paciente.peso !== null) &&
+      (this.paciente.altura > 0 || this.paciente.altura !== null) &&
+      (this.paciente.genero !== null || this.paciente.genero !== undefined) &&
+      (this.paciente.fecha_nacimiento !== null) 
+      
+    ) {
+      this.pacienteServicio.agregarPaciente(this.paciente).subscribe(
+        {
+          next: (datos) => {
+            this.enrutador.navigate(['/paciente']);
+          },
+          error: (error: any) => { console.log('Error al guardar el paciente') }
+        }
+      )
+    }else { 
+      alert('Faltan campos obligatorios')
+    }
 
-    this.pacienteServicio.agregarPaciente(this.paciente).subscribe(
-      {
-        next: (datos) => {
-          this.enrutador.navigate(['/paciente']);
-        },
-        error: (error: any) => { console.log('Error al guardar el paciente') }
-      }
-    )
+
   }
 
   irPaciente() {

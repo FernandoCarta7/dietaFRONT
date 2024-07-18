@@ -8,7 +8,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Genero</th>
                 <th scope="col">Altura</th>
-                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">Edad</th>
                 <th scope="col">Peso</th>
                 <th scope="col"></th>
             </tr>
@@ -18,20 +18,20 @@
                 <th scope="row">{{ paciente.primer_nombre + " " + paciente.primer_apellido }}</th>
                 <td>{{paciente.genero}}</td>
                 <td>{{paciente.altura + " cm"}}</td>
-                <td>{{paciente.fecha_nacimiento}}</td>
+                <td>{{ getEdad(paciente.fecha_nacimiento)}}</td>
                 <td>{{paciente.peso + " kg"}}</td>
                 <td>
-                    <button class="btn btn-primary" 
-                        (click)="editarPaciente(paciente.id_paciente)"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-danger" (click)="eliminarPaciente(paciente.id_paciente)"
-                        ><i class="bi bi-trash"></i></button>
-                    <button class="btn btn-warning" >
+                    <button class="btn btn-primary" (click)="editarPaciente(paciente.id_paciente)"><i
+                            class="bi bi-pencil"></i></button>
+                    <button class="btn btn-danger" (click)="eliminarPaciente(paciente.id_paciente)"><i
+                            class="bi bi-trash"></i></button>
+                    <button class="btn btn-warning">
                         <i class="bi bi-person-vcard"></i>
                     </button>
-                    <button class="btn btn-success" >
+                    <button class="btn btn-success">
                         <i class="bi bi-columns-gap"></i>
                     </button>
-                    
+
                 </td>
             </tr>
 

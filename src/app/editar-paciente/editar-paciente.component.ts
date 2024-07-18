@@ -58,17 +58,19 @@ export class EditarPacienteComponent {
   irPacientes(){
     this.enrutador.navigate(['/paciente']);
   }
-  validarCorreo(){
+  /*validarCorreo(){
     const regexCorreo = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*$/;
 
     return this.paciente.correo.match(regexCorreo);
   }
-  validarCadena(cadena:string){
+  validarCadena(cadena:string) : boolean{
     const regexCadena = /[a-zA-ZáéíóúÁÉÍÓÚ]/;
     if(cadena !== undefined){
-      return cadena.match(regexCadena);
+      let bandera = cadena.match(regexCadena);
+      console.log(bandera);
+      return true;
     }else {
-      return cadena;
+      return false;
     }
   }
   validarCelular(){
@@ -79,5 +81,5 @@ export class EditarPacienteComponent {
     } else {
       return false;
     }
-  }
+  }*/
 }

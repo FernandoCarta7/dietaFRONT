@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-registrar-alimento',
+  selector: 'registrar-alimento',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './registrar-alimento.component.html',
@@ -32,5 +32,9 @@ export class RegistrarAlimentoComponent {
         console.log('Upload error', error);
       });
     }
+  }
+
+  goTo(ruta : string){
+    this.route.navigate([ruta]);
   }
 }

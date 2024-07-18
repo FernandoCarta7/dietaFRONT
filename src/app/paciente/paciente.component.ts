@@ -42,7 +42,7 @@ export class PacienteComponent {
       error: (error) => console.error(error)
     })
   }
-  /*getEdad(fecha_nacimiento: Date) {
+  getEdad(fecha_nacimiento: Date) {
     edad: Number;
     const hoy = new Date();
     const nacimiento = new Date(fecha_nacimiento);
@@ -53,6 +53,6 @@ export class PacienteComponent {
       edad--;
     }
     return edad;
-  }*/
+  }
 }
 

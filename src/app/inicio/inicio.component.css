@@ -4,3 +4,10 @@
 .fondoBoton{
     background: #FF7D29;
 }
+
+.fondoVerdeExcel{
+    background: #217346;
+}
+button {
+    margin: 0.2rem;
+}

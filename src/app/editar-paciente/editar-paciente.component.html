@@ -1,6 +1,6 @@
 <div class="container ">
     <br>
-    <form class="form-floating p-3 mb-5 bg-primary rounded" (ngSubmit)="onSubmit()">
+    <form class="form-floating p-3 mb-5 rounded" (ngSubmit)="onSubmit()">
         <h2>Editar paciente</h2>
         <br>
         <div class="container">
@@ -11,7 +11,7 @@
                         <input type="text" class="form-control" placeholder="Primer nombre" aria-label="Primer nombre"
                             id="primer_nombre" name="primer_nombre" [(ngModel)]="paciente.primer_nombre">
                     </div>
-                    <span *ngIf="!validarCadena(paciente.primer_nombre)">Ingrese un nombre valido</span>
+                    <span>Ingrese un nombre valido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
@@ -31,7 +31,7 @@
                         aria-label="Primer apellido" id="primer_apellido" name="primer_apellido"
                         [(ngModel)]="paciente.primer_apellido">
                     </div>
-                    <span *ngIf="!validarCadena(paciente.primer_apellido)">Ingrese un apellido valido</span>
+                    <span>Ingrese un apellido valido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
@@ -79,7 +79,7 @@
                         <input type="email" class="form-control" placeholder="Correo" aria-label="Correo" id="correo"
                             name="correo" [(ngModel)]="paciente.correo">
                     </div>
-                    <span *ngIf="!validarCorreo()">Ingrese un correo valido</span>
+                    <span>Ingrese un correo valido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
@@ -87,7 +87,7 @@
                         <input type="text" class="form-control" placeholder="Celular" aria-label="Celular" id="celular"
                             name="celular" [(ngModel)]="paciente.celular">
                     </div>
-                    <span *ngIf="!validarCelular()">Ingrese un celular valido</span>
+                    <span>Ingrese un celular valido</span>
                 </div>
 
             </div>
@@ -100,7 +100,7 @@
                             name="peso" [(ngModel)]="paciente.peso">
                         <label class="input-group-text" for="peso">Kg</label>
                     </div>
-                    <span *ngIf="paciente.peso === 0" >Ingrese un peso valido</span>
+                    <span *ngIf="paciente.peso <= 0" >Ingrese un peso valido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
@@ -149,14 +149,7 @@
             </div>
             <br>
 
-            <div class="row" *ngIf="validarCadena(paciente.primer_nombre) && 
-                                    validarCadena(paciente.primer_apellido) && 
-                                    validarCadena(paciente.segundo_nombre) &&
-                                    validarCadena(paciente.segundo_apellido) &&
-                                    validarCadena(paciente.genero) &&
-                                    validarCadena(paciente.nivel_actividad) &&
-                                    validarCorreo()
-                                    ">
+            <div class="row">
                 <div class="col">
                     <button class="btn btn-primary" type="submit"><i class="bi bi-floppy"></i>
                         Guardar</button>

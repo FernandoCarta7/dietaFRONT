@@ -6,11 +6,11 @@
         <div class="container">
 
 
-            <div class="row">
+            <div class="">
                 <div class="col">
                     <div class="input-group">
 
-                        <label class="input-group-text" for="alimentos"><i class="bi bi-hospital"></i></label>
+                        <label class="input-group-text" for="alimentos"><i class="bi bi-filetype-csv"></i></label>
                         <input type="file" (change)="onFileSelected($event)" class="form-control" placeholder="Alimentos" aria-label="alimentos"
                             id="alimentos" name="alimentos" />
                     </div>
@@ -23,11 +23,11 @@
 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-success" (click)="onUpload()"><i class="bi bi-floppy"></i>Cargar archivo</button>
+                    <button class="btn btn-warning" (click)="onUpload()"><i class="bi bi-file-arrow-up"></i> Cargar archivo</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-danger" type="reset"><i class="bi bi-exclamation-circle"></i>
-                        Limpiar formulario</button>
+                    <button class="btn btn-danger" type="reset" (click)="goTo('inicio')"><i class="bi bi-x-lg"></i>
+                        Cancelar</button>
                 </div>
 
             </div>
