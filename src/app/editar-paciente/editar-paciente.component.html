@@ -19,7 +19,7 @@
                         <input type="text" class="form-control" placeholder="Segundo nombre" aria-label="Segundo nombre"
                             id="segundo_nombre" name="segundo_nombre" [(ngModel)]="paciente.segundo_nombre">
                     </div>
-                    
+
                 </div>
             </div>
             <br>
@@ -28,8 +28,8 @@
                     <div class="input-group">
                         <label class="input-group-text" for="primer_apellido"><i class="bi bi-file-person"></i></label>
                         <input type="text" class="form-control" placeholder="Primer apellido"
-                        aria-label="Primer apellido" id="primer_apellido" name="primer_apellido"
-                        [(ngModel)]="paciente.primer_apellido">
+                            aria-label="Primer apellido" id="primer_apellido" name="primer_apellido"
+                            [(ngModel)]="paciente.primer_apellido">
                     </div>
                     <span>Ingrese un apellido valido</span>
                 </div>
@@ -40,7 +40,7 @@
                             aria-label="Segundo apellido" id="segundo_apellido" name="segundo_apellido"
                             [(ngModel)]="paciente.segundo_apellido">
                     </div>
-                    
+
                 </div>
             </div>
             <br>
@@ -100,7 +100,7 @@
                             name="peso" [(ngModel)]="paciente.peso">
                         <label class="input-group-text" for="peso">Kg</label>
                     </div>
-                    <span *ngIf="paciente.peso <= 0" >Ingrese un peso valido</span>
+                    <span *ngIf="paciente.peso <= 0">Ingrese un peso valido</span>
                 </div>
                 <div class="col">
                     <div class="input-group">
@@ -143,7 +143,7 @@
                         <textarea type="text" class="form-control" placeholder="Enfermedades" aria-label="Enfermedades"
                             id="enfermedades" name="enfermedades" [(ngModel)]="paciente.enfermedades"></textarea>
                     </div>
-                    
+
                 </div>
 
             </div>
